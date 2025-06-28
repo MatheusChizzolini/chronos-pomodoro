@@ -1,3 +1,5 @@
+import { CirclePlayIcon, CircleStopIcon } from "lucide-react";
+import { Button } from "./components/Button";
 import { Container } from "./components/Container";
 import { CountDown } from "./components/CountDown";
 import { Cycles } from "./components/Cycles";
@@ -43,7 +45,7 @@ export default function App() {
           </div>
 
           <div className="form-row">
-            <button>Enviar</button>
+            <Button icon={<CirclePlayIcon size={32} />} />
           </div>
         </form>
       </Container>

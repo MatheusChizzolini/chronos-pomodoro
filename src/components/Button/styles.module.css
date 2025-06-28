@@ -1,0 +1,28 @@
+.button {
+  border: none;
+  color: var(--text-over-primary);
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  margin: 2.8rem 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  filter: brightness(80%);
+}
+
+.red {
+  color: var(--text-over-primary);
+  background-color: var(--primary);
+}
+
+.blue {
+  color: var(--text-over-info);
+  background-color: var(--info);
+}
