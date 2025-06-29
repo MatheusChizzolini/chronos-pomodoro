@@ -35,3 +35,21 @@
   --disabled: #555f7d;
   --text-disabled: #aab3cc;
 }
+
+:root[data-theme="light"] {
+  --slate-100: #020618;
+  --slate-200: #0f172b;
+  --slate-300: #1d293d;
+  --slate-400: #314158;
+  --slate-500: #45556c;
+  --slate-600: #62748e;
+  --slate-700: #90a1b9;
+  --slate-800: #cad5e2;
+  --slate-900: #e2e8f0;
+
+  --text-default: #020618;
+  --text-muted: #1d293d;
+
+  --link-color: #f10a47;
+  --link-hover: #d0083d;
+}
