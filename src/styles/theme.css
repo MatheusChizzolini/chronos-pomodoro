@@ -22,18 +22,18 @@
   --info: #2b7fff;
 
   --text-over-primary: #020618;
-  --text-over-primary-dark: #e6e9f0;
+  --text-over-primary-dark: #e2e8f0;
   --text-over-primary-light: #020618;
   --text-over-success: #020618;
   --text-over-warning: #020618;
-  --text-over-error: #e6e9f0;
+  --text-over-error: #e2e8f0;
   --text-over-info: #020618;
 
-  --text-default: #e6e9f0;
-  --text-muted: #aab3cc;
+  --text-default: #e2e8f0;
+  --text-muted: #90a1b9;
 
-  --disabled: #555f7d;
-  --text-disabled: #aab3cc;
+  --disabled: #45556c;
+  --text-disabled: #90a1b9;
 }
 
 :root[data-theme="light"] {

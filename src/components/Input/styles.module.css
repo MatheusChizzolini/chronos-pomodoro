@@ -12,7 +12,7 @@
 }
 
 .input:focus {
-  border: 0.2rem solid var(--primary-dark);
+  border: 0.2rem solid var(--primary-light);
 }
 
 .input::placeholder {
