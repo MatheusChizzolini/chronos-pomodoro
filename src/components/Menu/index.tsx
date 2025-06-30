@@ -37,8 +37,8 @@ export function Menu() {
       <a
         className={styles["menu-link"]}
         href=""
-        aria-label="Ir para a Home"
-        title="Ir para a Home"
+        aria-label="Página inicial"
+        title="Página inicial"
       >
         <HouseIcon strokeWidth={2.5} />
       </a>
@@ -46,8 +46,8 @@ export function Menu() {
       <a
         className={styles["menu-link"]}
         href=""
-        aria-label="Ver histórico"
-        title="Ver histórico"
+        aria-label="Histórico"
+        title="Histórico"
       >
         <HistoryIcon strokeWidth={2.5} />
       </a>
