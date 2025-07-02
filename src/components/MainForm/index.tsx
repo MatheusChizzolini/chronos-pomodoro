@@ -2,17 +2,20 @@ import { Input } from "../Input";
 import { Cycles } from "../Cycles";
 import { Button } from "../Button";
 import { CirclePlayIcon } from "lucide-react";
-import { useRef } from "react";
-
-import styles from "./styles.module.css";
 import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
+import { getNextCycle } from "../../utils/getNextCycle";
+import { getNextCycleType } from "../../utils/getNextCycleType";
+import { useRef } from "react";
+import styles from "./styles.module.css";
 
 export function MainForm() {
-  const { setState } = useTaskContext();
+  const { state, setState } = useTaskContext();
   // State para validações em tempo real, causa re-renderização (input controlado)
   // Ref para apenas armazenar, não causa re-renderização (input não controlado)
   const taskNameInput = useRef<HTMLInputElement>(null);
+  const nextCycle = getNextCycle(state.currentCycle);
+  const nextCycleType = getNextCycleType(nextCycle);
 
   function handleCreateTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,18 +27,18 @@ export function MainForm() {
         const newTask: TaskModel = {
           id: Date.now().toString(),
           taskName: taskName,
-          duration: 1,
+          duration: state.config[nextCycleType],
           startDate: Date.now(),
           completeDate: null,
           interruptDate: null,
-          type: "workTime",
+          type: nextCycleType,
         };
 
         setState((prevState) => {
           return {
             ...prevState, // Sempre copiar um objeto ou array com spread operator quando for mudar seu valor
             activeTask: newTask,
-            currentCycle: 1,
+            currentCycle: nextCycle,
             secondsRemaining: newTask.duration * 60,
             formattedSecondsRemaining: "12:34",
             tasks: [...prevState.tasks, newTask],
