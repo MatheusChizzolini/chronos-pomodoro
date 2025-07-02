@@ -8,6 +8,7 @@ import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 import { useRef } from "react";
 import styles from "./styles.module.css";
+import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
 
 export function MainForm() {
   const { state, setState } = useTaskContext();
@@ -34,13 +35,14 @@ export function MainForm() {
           type: nextCycleType,
         };
 
+        const secondsRemaining = newTask.duration * 60;
         setState((prevState) => {
           return {
             ...prevState, // Sempre copiar um objeto ou array com spread operator quando for mudar seu valor
             activeTask: newTask,
             currentCycle: nextCycle,
-            secondsRemaining: newTask.duration * 60,
-            formattedSecondsRemaining: "12:34",
+            secondsRemaining: secondsRemaining,
+            formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
             tasks: [...prevState.tasks, newTask],
             config: { ...prevState.config },
           };
