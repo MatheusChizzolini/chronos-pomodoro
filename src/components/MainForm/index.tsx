@@ -6,9 +6,9 @@ import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
-import { useRef } from "react";
-import styles from "./styles.module.css";
 import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
+import styles from "./styles.module.css";
+import { useRef } from "react";
 
 export function MainForm() {
   const { state, setState } = useTaskContext();
@@ -69,9 +69,11 @@ export function MainForm() {
         <p>Lorem ipsum dolor sit amet consectetur.</p>
       </div>
 
-      <div className={styles["form-row"]}>
-        <Cycles />
-      </div>
+      {state.currentCycle > 0 && (
+        <div className={styles["form-row"]}>
+          <Cycles />
+        </div>
+      )}
 
       <div className={styles["form-row"]}>
         <Button icon={<CirclePlayIcon size={32} />} />

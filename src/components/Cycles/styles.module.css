@@ -17,14 +17,14 @@
   border-radius: 50%;
 }
 
-.work-time {
+.workTime {
   background-color: var(--warning);
 }
 
-.short-break-time {
+.shortBreakTime {
   background-color: var(--success);
 }
 
-.long-break-time {
+.longBreakTime {
   background-color: var(--info);
 }
