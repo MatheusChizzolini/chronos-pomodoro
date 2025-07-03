@@ -1,7 +1,7 @@
 import { Input } from "../Input";
 import { Cycles } from "../Cycles";
 import { Button } from "../Button";
-import { CirclePlayIcon } from "lucide-react";
+import { CirclePlayIcon, StopCircleIcon } from "lucide-react";
 import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
@@ -53,6 +53,23 @@ export function MainForm() {
     }
   }
 
+  function handleStopTask() {
+    setState((prevState) => {
+      return {
+        ...prevState,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+        tasks: prevState.tasks.map((task) => {
+          if (prevState.activeTask && prevState.activeTask.id === task.id) {
+            return { ...task, interruptDate: Date.now() };
+          }
+          return task;
+        }),
+      };
+    });
+  }
+
   return (
     <form onSubmit={handleCreateTask} className={styles.form} action="">
       <div className={styles["form-row"]}>
@@ -62,6 +79,7 @@ export function MainForm() {
           label="Tarefa"
           placeholder="Ex: Estudar ED2"
           ref={taskNameInput}
+          disabled={!!state.activeTask} // Trasforma em boolean, null é false
         />
       </div>
 
@@ -76,7 +94,25 @@ export function MainForm() {
       )}
 
       <div className={styles["form-row"]}>
-        <Button icon={<CirclePlayIcon size={32} />} />
+        {state.activeTask && (
+          <Button
+            aria-label="Parar tarefa"
+            title="Parar tarefa"
+            color="blue"
+            type="button"
+            icon={<StopCircleIcon size={32} />}
+            onClick={handleStopTask}
+          />
+        )}
+
+        {!state.activeTask && (
+          <Button
+            aria-label="Começar tarefa"
+            title="Começar tarefa"
+            type="submit"
+            icon={<CirclePlayIcon size={32} />}
+          />
+        )}
       </div>
     </form>
   );
