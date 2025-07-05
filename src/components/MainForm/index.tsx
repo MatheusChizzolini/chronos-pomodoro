@@ -8,6 +8,7 @@ import { getNextCycleType } from "../../utils/getNextCycleType";
 import styles from "./styles.module.css";
 import { useRef } from "react";
 import { getNextCycle } from "../../utils/getNextCycle";
+import { Tips } from "../Tips";
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
@@ -59,7 +60,7 @@ export function MainForm() {
       </div>
 
       <div className={styles["form-row"]}>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <Tips nextCycleType={nextCycleType} />
       </div>
 
       {state.currentCycle > 0 && (
