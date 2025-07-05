@@ -1,3 +1,4 @@
+import { MessagesContainer } from "./components/MessagesContainer";
 import { TaskContextProvider } from "./contexts/TaskContext/TaskContextProvider";
 import { Home } from "./pages/Home";
 
@@ -8,7 +9,9 @@ export default function App() {
   return (
     <>
       <TaskContextProvider>
-        <Home />
+        <MessagesContainer>
+          <Home />
+        </MessagesContainer>
       </TaskContextProvider>
     </>
   );

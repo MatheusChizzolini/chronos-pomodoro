@@ -34,6 +34,17 @@
 
   --disabled: #45556c;
   --text-disabled: #90a1b9;
+
+  --toastify-color-light: var(--text-default);
+  --toastify-color-dark: var(--text-default);
+  --toastify-color-info: var(--info);
+  --toastify-color-success: var(--success);
+  --toastify-color-warning: var(--warning);
+  --toastify-color-error: var(--error);
+  --toastify-text-color-light: #020618;
+  --toastify-text-color-dark: #e2e8f0;
+  --toastify-color-progress-light: var(--primary);
+  --toastify-color-progress-dark: var(--primary);
 }
 
 :root[data-theme="light"] {
@@ -52,4 +63,7 @@
 
   --link-color: #f10a47;
   --link-hover: #d0083d;
+
+  --toastify-text-color-light: #e2e8f0;
+  --toastify-text-color-dark: #e2e8f0;
 }

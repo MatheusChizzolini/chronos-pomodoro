@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 import { useRef } from "react";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { Tips } from "../Tips";
+import { showMessage } from "../../adapters/toastifyAdapter";
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
@@ -37,7 +38,7 @@ export function MainForm() {
 
         dispatch({ type: "START_TASK", payload: newTask });
       } else {
-        alert("Digite o nome da tarefa!");
+        showMessage.warning("Digite o nome da tarefa!");
       }
     }
   }
