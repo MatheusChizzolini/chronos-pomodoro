@@ -30,6 +30,20 @@ export function taskReducer(
         formattedSecondsRemaining: "00:00",
         tasks: state.tasks.map((task) => {
           if (state.activeTask && state.activeTask.id === task.id) {
+            return { ...task, completeDate: Date.now() };
+          }
+          return task;
+        }),
+      };
+    }
+    case "COMPLETE_TASK": {
+      return {
+        ...state,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+        tasks: state.tasks.map((task) => {
+          if (state.activeTask && state.activeTask.id === task.id) {
             return { ...task, interruptDate: Date.now() };
           }
           return task;
@@ -38,6 +52,15 @@ export function taskReducer(
     }
     case "RESET_STATE": {
       return state;
+    }
+    case "COUNT_DOWN": {
+      return {
+        ...state,
+        secondsRemaining: action.payload.secondsRemaining,
+        formattedSecondsRemaining: formatSecondsToMinutes(
+          action.payload.secondsRemaining
+        ),
+      };
     }
   }
   return state;

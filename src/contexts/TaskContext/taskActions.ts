@@ -10,4 +10,11 @@ export type TaskActionModel =
     }
   | {
       type: "RESET_STATE";
+    }
+  | {
+      type: "COUNT_DOWN";
+      payload: { secondsRemaining: number };
+    }
+  | {
+      type: "COMPLETE_TASK";
     };

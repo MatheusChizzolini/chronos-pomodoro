@@ -17,14 +17,18 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
     console.log(countDownSeconds);
 
     if (countDownSeconds <= 0) {
-      console.log("Completo");
+      dispatch({ type: "COMPLETE_TASK" });
       worker.terminate();
+    } else {
+      dispatch({
+        type: "COUNT_DOWN",
+        payload: { secondsRemaining: countDownSeconds },
+      });
     }
   });
 
   useEffect(() => {
     if (!state.activeTask) {
-      console.log("Terminando");
       worker.terminate();
     }
     worker.postMessage(state);
