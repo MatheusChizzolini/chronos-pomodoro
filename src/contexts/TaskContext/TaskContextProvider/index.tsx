@@ -37,6 +37,11 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
     if (!state.activeTask) {
       worker.terminate();
     }
+    if (state.formattedSecondsRemaining !== "00:00") {
+      document.title = `${state.formattedSecondsRemaining} | Chronos Pomodoro`;
+    } else {
+      document.title = "Chronos Pomodoro";
+    }
 
     worker.postMessage(state);
   }, [state, worker]);
