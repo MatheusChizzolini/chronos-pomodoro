@@ -1,6 +1,7 @@
 import { Container } from "../../components/Container";
 import { GenericHtml } from "../../components/GenericHtml";
 import { Heading } from "../../components/Heading";
+import { RouterLink } from "../../components/RouterLink";
 import { MainTemplate } from "../../templates/MainTemplate";
 
 export function NotFound() {
@@ -14,8 +15,8 @@ export function NotFound() {
             tentou acessar não existe :/{" "}
           </p>
           <p>
-            Volte para a <a href="/">página principal</a> e finja que nada disso
-            aconteceu...
+            Volte para a <RouterLink href="/">página principal</RouterLink> e
+            finja que nada disso aconteceu...
           </p>
         </GenericHtml>
       </Container>

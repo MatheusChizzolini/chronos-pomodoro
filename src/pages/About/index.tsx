@@ -1,6 +1,7 @@
 import { Container } from "../../components/Container";
 import { GenericHtml } from "../../components/GenericHtml";
 import { Heading } from "../../components/Heading";
+import { RouterLink } from "../../components/RouterLink";
 import { MainTemplate } from "../../templates/MainTemplate";
 
 export function About() {
@@ -38,7 +39,8 @@ export function About() {
           <p>
             Aqui neste aplicativo, você consegue configurar os pomodoros do seu
             jeito, podendo definir os tempos de foco, de pausa curta e de pausa
-            longa. Você pode fazer acessando as <a href="">Configurações</a>.
+            longa. Você pode fazer acessando as{" "}
+            <RouterLink href="/historico">Configurações</RouterLink>.
           </p>
         </GenericHtml>
       </Container>

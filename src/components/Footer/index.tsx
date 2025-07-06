@@ -1,9 +1,10 @@
+import { RouterLink } from "../RouterLink";
 import styles from "./styles.module.css";
 
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <a href="">Entenda a técnica Pomodoro</a>
+      <RouterLink href="/about-pomodoro">Entenda a técnica Pomodoro</RouterLink>
       <a href="">Matheus Chizzolini &copy; {new Date().getFullYear()}</a>
     </footer>
   );
