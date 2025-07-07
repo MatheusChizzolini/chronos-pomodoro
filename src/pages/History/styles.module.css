@@ -1,0 +1,31 @@
+.responsive-table {
+  overflow-x: auto;
+  border-radius: 0.8rem;
+}
+
+.responsive-table table {
+  width: 100%;
+  min-width: 64rem;
+  border-collapse: collapse;
+}
+.responsive-table th {
+  background-color: var(--slate-600);
+}
+.responsive-table td {
+  background-color: var(--slate-800);
+}
+
+.responsive-table td,
+.responsive-table th {
+  border-bottom: 0.2rem solid var(--slate-700);
+  text-align: left;
+  padding: 1.6rem;
+}
+
+.button-container button {
+  min-width: auto;
+  margin: 0;
+  padding: 1rem;
+  color: var(--text-over-error);
+  background-color: var(--error);
+}

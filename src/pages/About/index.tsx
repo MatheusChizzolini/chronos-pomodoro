@@ -40,7 +40,7 @@ export function About() {
             Aqui neste aplicativo, você consegue configurar os pomodoros do seu
             jeito, podendo definir os tempos de foco, de pausa curta e de pausa
             longa. Você pode fazer acessando as{" "}
-            <RouterLink href="/historico">Configurações</RouterLink>.
+            <RouterLink href="/configuracoes">Configurações</RouterLink>.
           </p>
         </GenericHtml>
       </Container>
