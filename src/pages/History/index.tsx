@@ -3,12 +3,16 @@ import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
 import { Heading } from "../../components/Heading";
 import { MainTemplate } from "../../templates/MainTemplate";
-import styles from "./styles.module.css";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { formatDate } from "../../utils/formatDate";
+import { getTaskStatus } from "../../utils/getTaskStatus";
+import styles from "./styles.module.css";
 
 export function History() {
   const { state } = useTaskContext();
+  const sortedTasks = [...state.tasks].sort((a, b) => {
+    return b.startDate - a.startDate;
+  });
 
   return (
     <MainTemplate>
@@ -38,14 +42,20 @@ export function History() {
               </tr>
             </thead>
             <tbody>
-              {state.tasks.map((task) => {
+              {sortedTasks.map((task) => {
                 return (
                   <tr key={task.id}>
                     <td>{task.name}</td>
                     <td>{task.duration} minuto(s)</td>
                     <td>{formatDate(task.startDate)}</td>
-                    <td>Completa</td>
-                    <td>{task.type}</td>
+                    <td>{getTaskStatus(task, state.activeTask)}</td>
+                    <td>
+                      {task.type === "workTime"
+                        ? "Foco"
+                        : task.type === "shortBreakTime"
+                        ? "Descanso curto"
+                        : "Descanso longo"}
+                    </td>
                   </tr>
                 );
               })}
