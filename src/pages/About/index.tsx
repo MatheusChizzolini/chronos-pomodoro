@@ -19,7 +19,7 @@ export function About() {
             o cronômetro de cozinha em forma de tomate que Cirillo usou como
             estudante universitário. -{" "}
             <a
-              target="blank"
+              target="_blank"
               href="https://pt.wikipedia.org/wiki/T%C3%A9cnica_pomodoro"
             >
               Wikipedia

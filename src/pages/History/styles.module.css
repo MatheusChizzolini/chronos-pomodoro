@@ -1,6 +1,7 @@
 .responsive-table {
   overflow-x: auto;
   border-radius: 0.8rem;
+  border: 0.2rem solid var(--slate-700);
 }
 
 .responsive-table table {
@@ -9,10 +10,10 @@
   border-collapse: collapse;
 }
 .responsive-table th {
-  background-color: var(--slate-600);
+  background-color: var(--slate-800);
 }
 .responsive-table td {
-  background-color: var(--slate-800);
+  background-color: var(--slate-900);
 }
 
 .responsive-table td,
@@ -20,6 +21,10 @@
   border-bottom: 0.2rem solid var(--slate-700);
   text-align: left;
   padding: 1.6rem;
+}
+
+.responsive-table tr:last-child td {
+  border: none;
 }
 
 .button-container button {
