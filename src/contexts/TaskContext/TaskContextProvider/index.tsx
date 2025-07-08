@@ -16,15 +16,15 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
 
     if (storageState === null) {
       return initialTaskState;
+    } else {
+      const parseStorageState = JSON.parse(storageState) as TaskStateModel;
+      return {
+        ...parseStorageState,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+      };
     }
-
-    const parseStorageState = JSON.parse(storageState) as TaskStateModel;
-    return {
-      ...parseStorageState,
-      activeTask: null,
-      secondsRemaining: 0,
-      formattedSecondsRemaining: "00:00",
-    };
   });
 
   const worker = TimerWorkerManager.getInstance();

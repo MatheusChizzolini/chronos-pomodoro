@@ -23,7 +23,7 @@ export function MainRouter() {
         <Route path="/" element={<Home />} />
         <Route path="/historico" element={<History />} />
         <Route path="/configuracoes" element={<Settings />} />
-        <Route path="/sobre-pomodoro" element={<About />} />
+        <Route path="/sobre" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ScrollToTop />

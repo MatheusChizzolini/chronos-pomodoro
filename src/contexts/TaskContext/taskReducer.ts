@@ -52,7 +52,10 @@ export function taskReducer(
       };
     }
     case "RESET_STATE": {
-      return { ...initialTaskState };
+      return { ...initialTaskState, config: state.config };
+    }
+    case "CHANGE_SETTINGS": {
+      return { ...state, config: { ...action.payload } };
     }
     case "COUNT_DOWN": {
       return {

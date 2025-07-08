@@ -1,4 +1,5 @@
 import type { TaskModel } from "../../models/TaskModel";
+import type { TaskStateModel } from "../../models/TaskStateModel";
 
 export type TaskActionModel =
   | {
@@ -17,4 +18,8 @@ export type TaskActionModel =
     }
   | {
       type: "COMPLETE_TASK";
+    }
+  | {
+      type: "CHANGE_SETTINGS";
+      payload: TaskStateModel["config"];
     };
