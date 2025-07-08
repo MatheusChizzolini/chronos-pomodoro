@@ -11,13 +11,13 @@ export function About() {
         <GenericHtml>
           <Heading>A Técnica Pomodoro</Heading>
           <p>
-            A Técnica Pomodoro é criada por Francesco Cirillo para a maneira
-            mais produtiva de trabalhar e estudar. A técnica utiliza a
+            A Técnica Pomodoro foi criada por Francesco Cirillo para uma maneira
+            mais produtiva de trabalhar e estudar. A técnica utiliza um
             temporizador para dividir o trabalho em intervalos, tradicionalmente
-            25 minutos de duração, separados por pausas curtas. Cada intervalo é
-            conhecido como um pomodoro, da palavra italiana para 'tomate', após
-            o cronômetro de cozinha em forma de tomate que Cirillo usou como
-            estudante universitário. -{" "}
+            de 25 minutos de duração, separados por pausas curtas. Cada
+            intervalo é conhecido como um pomodoro, da palavra italiana
+            'tomate', por causa do cronômetro de cozinha em forma de tomate que
+            Cirillo usou. -{" "}
             <a
               target="_blank"
               href="https://pt.wikipedia.org/wiki/T%C3%A9cnica_pomodoro"
